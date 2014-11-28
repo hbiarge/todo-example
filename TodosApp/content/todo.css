@@ -1,0 +1,60 @@
+﻿body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+header {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #b5b5b5;
+  padding: 10px;
+}
+header h1 {
+  font-size: 1.5em;
+  text-align: center;
+}
+footer {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #cfcfcf;
+  padding: 10px;
+  font-size: 0.6em;
+}
+.container {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.new-task {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.new-task > input {
+  width: calc(100% - 55px);
+}
+.remaining-tasks > button {
+  float: right;
+}
+.task-list > ul {
+  list-style: none;
+}
+.task-list > ul > li {
+  margin: 2px 0 2px 0;
+}
+.task-list .pending {
+  color: green;
+}
+.task-list .done {
+  text-decoration: line-through;
+  color: indianred;
+}
+.task-list .done-status {
+  font-size: 0.6em;
+  color: dimgray;
+  text-decoration: none;
+}
+.detail-footer {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+/*# sourceMappingURL=todo.css.map */

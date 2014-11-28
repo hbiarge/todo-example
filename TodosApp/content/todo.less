@@ -1,0 +1,82 @@
+﻿body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@defaultWidth: 400px;
+@baseColor: #b5b5b5;
+
+header {
+    width: @defaultWidth;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: @baseColor;
+    padding: 10px;
+
+    h1 {
+        font-size: 1.5em;
+        text-align: center;
+    }
+}
+
+footer {
+    width: @defaultWidth;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: lighten(@baseColor, 10%);
+    padding: 10px;
+    font-size: 0.6em;
+}
+
+.container {
+    width: @defaultWidth;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.new-task {
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    > input {
+        width: calc(~"100% - 55px");
+    }
+}
+
+.remaining-tasks {
+    > button {
+        float: right;
+    }
+}
+
+.task-list {
+    > ul {
+        list-style: none;
+
+        > li {
+            margin: 2px 0 2px 0;
+        }
+    }
+
+    .pending {
+        color: green;
+    }
+
+    .done {
+        text-decoration: line-through;
+        color: indianred;
+    }
+
+    .done-status {
+        font-size: 0.6em;
+        color: dimgray;
+        text-decoration: none;
+    }
+}
+
+.detail-header {
+}
+
+.detail-footer {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
