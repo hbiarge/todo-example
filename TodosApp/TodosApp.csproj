@@ -72,7 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
-    <Content Include="app\TodosCtrl.js" />
+    <Content Include="app\todosCtrl.js" />
     <Content Include="content\todo.css">
       <DependentUpon>todo.less</DependentUpon>
     </Content>
