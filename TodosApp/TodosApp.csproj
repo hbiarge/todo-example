@@ -61,6 +61,8 @@
     <Content Include="content\todo.css.map">
       <DependentUpon>todo.css</DependentUpon>
     </Content>
+    <Content Include="scripts\angular.min.js.map" />
+    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -69,6 +71,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\app.js" />
+    <Content Include="app\TodosCtrl.js" />
     <Content Include="content\todo.css">
       <DependentUpon>todo.less</DependentUpon>
     </Content>
@@ -76,6 +80,9 @@
       <DependentUpon>todo.css</DependentUpon>
     </Content>
     <Content Include="index.html" />
+    <Content Include="scripts\angular-mocks.js" />
+    <Content Include="scripts\angular.js" />
+    <Content Include="scripts\angular.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
