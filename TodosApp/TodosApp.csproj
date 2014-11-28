@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\todoStore.js" />
     <Content Include="content\todo.less" />
     <Content Include="content\todo.css.map">
       <DependentUpon>todo.css</DependentUpon>
@@ -72,7 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
-    <Content Include="app\TodosCtrl.js" />
+    <Content Include="app\todosCtrl.js" />
     <Content Include="content\todo.css">
       <DependentUpon>todo.less</DependentUpon>
     </Content>

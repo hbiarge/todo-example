@@ -1,43 +1,28 @@
 ﻿(function () {
     'use strict';
 
-    function Todo(text) {
-        this.text = text;
-        this.done = false;
-    };
 
-    function todosCtrl($scope) {
+
+    function todosCtrl($scope, todoStore) {
 
         $scope.newTodoText = '';
 
-        $scope.remaining = 0;
+        $scope.remaining = todoStore.remaining;
 
-        $scope.todos = [];
+        $scope.todos = todoStore.getAll();
 
         $scope.addNew = function () {
-            var newTodo = new Todo($scope.newTodoText);
-            $scope.todos.push(newTodo);
-            $scope.remaining++;
+            todoStore.addNew($scope.newTodoText);
             $scope.newTodoText = '';
         };
 
-        $scope.removeDoneTodos = function () {
-            $scope.todos = $scope.todos.filter(function (todo) {
-                return todo.done !== true;
-            });
-        };
+        $scope.removeDoneTodos = todoStore.removeDone;
 
-        $scope.updateRemainig = function (todo) {
-            if (todo.done) {
-                $scope.remaining--;
-            } else {
-                $scope.remaining++;
-            }
-        };
+        $scope.updateRemainig = todoStore.remaining.update;
 
     }
 
-    todosCtrl.$inject = ['$scope'];
+    todosCtrl.$inject = ['$scope', 'todoStore'];
 
     angular.module('todo').controller('TodosCtrl', todosCtrl);
 
