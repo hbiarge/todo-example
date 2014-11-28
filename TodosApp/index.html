@@ -8,31 +8,15 @@
     <header>
         <h1>Todo List</h1>
     </header>
-    <section class="container" ng-controller="TodosCtrl">
-        <form name="newTask" ng-model="newTodoText" class="new-task" novalidate>
-            <input type="text" name="newTodoText" ng-model="newTodoText" required />
-            <button ng-click="addNew()" ng-disabled="!newTask.$valid">add</button>
-        </form>
-        <section class="remaining-tasks">
-            <span>Total: {{todos.length}} - Remaining: {{remaining.value}}</span>
-            <button ng-click="removeDoneTodos()" ng-disabled="(todos.length - remaining) === 0">remove done</button>
-        </section>
-        <section class="task-list">
-            <ul>
-                <li ng-repeat="todo in todos">
-                    <input type="checkbox" ng-model="todo.done" ng-change="updateRemainig(todo)" />
-                    <span ng-class="{pending: todo.done === false, done: todo.done}">{{todo.text}}</span>
-                    <span class="done-status">is done?: {{todo.done}}</span>
-                </li>
-            </ul>
-        </section>
-    </section>
+    <section ng-view class="container"></section>
     <footer>
         <span>Developed with AngularJs by Plain Concepts</span>
     </footer>
     <script src="scripts/angular.js"></script>
+    <script src="scripts/angular-route.js"></script>
     <script src="app/app.js"></script>
     <script src="app/todoStore.js"></script>
     <script src="app/todosCtrl.js"></script>
+    <script src="app/detailCtrl.js"></script>
 </body>
 </html>

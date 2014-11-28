@@ -1,7 +1,10 @@
 ﻿(function () {
     'use strict';
 
+    var lastId = 0;
+
     function Todo(text) {
+        this.id = ++lastId,
         this.text = text;
         this.done = false;
     };
@@ -25,6 +28,18 @@
             return todos;
         }
 
+        function getById(todoId) {
+            var results = todos.filter(function (todo) {
+                return todo.id === todoId;
+            });
+
+            if (results.length === 1) {
+                return results[0];
+            }
+
+            return null;
+        }
+
         function addNew(text) {
             var newTodo = new Todo(text);
             todos.push(newTodo);
@@ -44,6 +59,7 @@
 
         return {
             getAll: getAll,
+            getById: getById,
             addNew: addNew,
             removeDone: removeDone,
             remaining: remaining

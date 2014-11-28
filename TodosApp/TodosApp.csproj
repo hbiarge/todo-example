@@ -57,13 +57,19 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\detailCtrl.js" />
     <Content Include="app\todoStore.js" />
+    <Content Include="app\tpl\Detail.html" />
+    <Content Include="app\tpl\List.html" />
     <Content Include="content\todo.less" />
     <Content Include="content\todo.css.map">
       <DependentUpon>todo.css</DependentUpon>
     </Content>
+    <Content Include="scripts\angular-route.js" />
+    <Content Include="scripts\angular-route.min.js" />
     <Content Include="scripts\angular.min.js.map" />
     <Content Include="packages.config" />
+    <Content Include="scripts\angular-route.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
