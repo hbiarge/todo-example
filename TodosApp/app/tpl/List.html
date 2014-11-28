@@ -4,7 +4,7 @@
 </form>
 <section class="remaining-tasks">
     <span>Total: {{todos.length}} - Remaining: {{remaining.value}}</span>
-    <button ng-click="removeDoneTodos()" ng-disabled="(todos.length - remaining) === 0">remove done</button>
+    <button ng-click="removeDoneTodos()" ng-disabled="(todos.length - remaining.value) === 0">remove done</button>
 </section>
 <section class="task-list">
     <ul>
