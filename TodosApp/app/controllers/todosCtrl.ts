@@ -1,11 +1,9 @@
-﻿(function () {
-    'use strict';
-
-
+﻿(() => {
+    "use strict";
 
     function todosCtrl($scope, todoStore) {
 
-        $scope.newTodoText = '';
+        $scope.newTodoText = "";
 
         $scope.remaining = todoStore.remaining;
 
@@ -15,24 +13,24 @@
             todoStore.addNew($scope.newTodoText).then(
                 function success(data) {
                     $scope.todos.push(data);
-                    $scope.newTodoText = '';
+                    $scope.newTodoText = "";
                 },
                 function error() {
                     // Show error
                 });
-            $scope.newTodoText = '';
+            $scope.newTodoText = "";
         };
 
         $scope.removeDoneTodos = function () {
             todoStore.removeDone().then(
-               function success() {
-                   $scope.todos = $scope.todos.filter(function (todo) {
-                       return todo.done !== true;
-                   });
-               },
-               function error() {
-                   // Show error
-               });
+                function success() {
+                    $scope.todos = $scope.todos.filter(function (todo) {
+                        return todo.done !== true;
+                    });
+                },
+                function error() {
+                    // Show error
+                });
         };
 
         $scope.updateRemainig = function (todo) {
@@ -49,8 +47,8 @@
 
     }
 
-    todosCtrl.$inject = ['$scope', 'todoStore'];
+    todosCtrl.$inject = ["$scope", "todoStore"];
 
-    angular.module('todo').controller('TodosCtrl', todosCtrl);
+    angular.module("todo").controller("TodosCtrl", todosCtrl);
 
 })();

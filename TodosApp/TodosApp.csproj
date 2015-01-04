@@ -76,8 +76,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\controllers\detailCtrl.js" />
-    <Content Include="app\services\todoStore.js" />
+    <TypeScriptCompile Include="app\controllers\detailCtrl.ts" />
+    <TypeScriptCompile Include="app\services\todoStore.ts" />
     <Content Include="app\tpl\Detail.html" />
     <Content Include="app\tpl\List.html" />
     <Content Include="content\todo.less" />
@@ -103,7 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app\app.ts" />
-    <Content Include="app\controllers\todosCtrl.js" />
+    <TypeScriptCompile Include="app\controllers\todosCtrl.ts" />
     <Content Include="content\todo.css">
       <DependentUpon>todo.less</DependentUpon>
     </Content>
