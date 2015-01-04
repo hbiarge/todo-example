@@ -6,6 +6,10 @@
 *.user
 *.sln.docstates
 
+## Ignote generated TypeScript files
+TodosApp/app/**/*.js
+TodosApp/app/**/*.map
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
