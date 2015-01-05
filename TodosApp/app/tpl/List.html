@@ -1,15 +1,15 @@
-﻿<form name="newTask" ng-model="newTodoText" class="new-task" novalidate>
-    <input type="text" name="newTodoText" ng-model="newTodoText" required />
-    <button ng-click="addNew()" ng-disabled="!newTask.$valid">add</button>
+﻿<form name="newTask" class="new-task" novalidate>
+    <input type="text" name="newTodoText" ng-model="vm.newTodoText" required />
+    <button ng-click="vm.addNew()" ng-disabled="!newTask.$valid">add</button>
 </form>
 <section class="remaining-tasks">
-    <span>Total: {{todos.length}} - Remaining: {{remaining.value}}</span>
-    <button ng-click="removeDoneTodos()" ng-disabled="(todos.length - remaining.value) === 0">remove done</button>
+    <span>Total: {{vm.todos.length}} - Remaining: {{vm.remaining.value}}</span>
+    <button ng-click="vm.removeDoneTodos()" ng-disabled="(vm.todos.length - vm.remaining.value) === 0">remove done</button>
 </section>
 <section class="task-list">
     <ul>
-        <li ng-repeat="todo in todos">
-            <input type="checkbox" ng-model="todo.done" ng-change="updateRemainig(todo)" />
+        <li ng-repeat="todo in vm.todos">
+            <input type="checkbox" ng-model="todo.done" ng-change="vm.updateRemainig(todo)" />
             <a ng-href="#/detail/{{todo.id}}" ng-class=" {pending: todo.done === false, done: todo.done}">{{todo.text}}</a>
             <span class="done-status">is done?: {{todo.done}}</span>
         </li>

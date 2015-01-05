@@ -2,7 +2,7 @@
 module Todos {
     'use strict';
 
-    interface IDetailsScope extends ng.IScope {
+    interface IDetailsScope {
         todo: Todo;
     }
 
@@ -10,12 +10,14 @@ module Todos {
         todoId: string;
     }
 
-    class DetailsController {
-        static $inject = ['$scope', '$routeParams', 'todoStore'];
-        constructor($scope: IDetailsScope, $routeParams: IDetailsParams, todoStore: ITodoStoreService) {
+    class DetailsController implements IDetailsScope {
+        todo: Todo;
+
+        static $inject = ['$routeParams', 'todoStore'];
+        constructor($routeParams: IDetailsParams, todoStore: ITodoStoreService) {
             todoStore.getById(parseInt($routeParams.todoId, 10)).then(
                 (data: Todo) => {
-                    $scope.todo = data;
+                    this.todo = data;
                 },
                 () => {
                     // show error
