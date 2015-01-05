@@ -1,54 +1,57 @@
-﻿(() => {
-    "use strict";
+﻿/// <reference path="../services/todostore.ts" />
+module Todos {
+    'use strict';
 
-    function todosCtrl($scope, todoStore) {
-
-        $scope.newTodoText = "";
-
-        $scope.remaining = todoStore.remaining;
-
-        $scope.todos = [];
-
-        $scope.addNew = function () {
-            todoStore.addNew($scope.newTodoText).then(
-                function success(data) {
-                    $scope.todos.push(data);
-                    $scope.newTodoText = "";
-                },
-                function error() {
-                    // Show error
-                });
-            $scope.newTodoText = "";
-        };
-
-        $scope.removeDoneTodos = function () {
-            todoStore.removeDone().then(
-                function success() {
-                    $scope.todos = $scope.todos.filter(function (todo) {
-                        return todo.done !== true;
-                    });
-                },
-                function error() {
-                    // Show error
-                });
-        };
-
-        $scope.updateRemainig = function (todo) {
-            todoStore.switchDone(todo);
-        };
-
-        todoStore.getAll().then(
-            function success(data) {
-                $scope.todos = data;
-            },
-            function error() {
-                // Show error 
-            });
-
+    interface ITodosScope extends ng.IScope {
+        newTodoText: string;
+        remaining: IRemaining;
+        todos: Todo[];
+        addNew(): void;
+        removeDoneTodos(): void;
+        updateRemainig(todo: Todo): void;
     }
 
-    todosCtrl.$inject = ["$scope", "todoStore"];
+    class TodosController {
+        static $inject = ['$scope', 'todoStore'];
+        constructor($scope: ITodosScope, todoStore: ITodoStoreService) {
+            $scope.newTodoText = '';
+            $scope.remaining = todoStore.remaining;
+            $scope.todos = [];
+            $scope.addNew = () => {
+                todoStore.addNew($scope.newTodoText).then(
+                    (data: Todo) => {
+                        $scope.todos.push(data);
+                        $scope.newTodoText = '';
+                    },
+                    () => {
+                        // show error
+                    });
+                $scope.newTodoText = '';
+            };
 
-    angular.module("todo").controller("TodosCtrl", todosCtrl);
+            $scope.removeDoneTodos = () => {
+                todoStore.removeDone().then(
+                    () => {
+                        $scope.todos = $scope.todos.filter((todo: Todo) => (!todo.done));
+                    },
+                    () => {
+                        // show error
+                    });
+            };
 
-})();
+            $scope.updateRemainig = (todo: Todo) => {
+                todoStore.switchDone(todo);
+            };
+
+            todoStore.getAll().then(
+                (data: Todo[]) => {
+                    $scope.todos = data;
+                },
+                () => {
+                    // show error 
+                });
+        }
+    }
+
+    angular.module('todo').controller('TodosCtrl', TodosController);
+}

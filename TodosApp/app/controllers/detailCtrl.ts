@@ -1,14 +1,27 @@
-﻿(() => {
-    "use strict";
+﻿/// <reference path="../services/todostore.ts" />
+module Todos {
+    'use strict';
 
-    function detailCtrl($scope, $routeParams, todoStore) {
-
-        $scope.todo = todoStore.getById(parseInt($routeParams.todoId));
-
+    interface IDetailsScope extends ng.IScope {
+        todo: Todo;
     }
 
-    detailCtrl.$inject = ["$scope", "$routeParams", "todoStore"];
+    interface IDetailsParams extends ng.route.IRouteParamsService {
+        todoId: string;
+    }
 
-    angular.module("todo").controller("DetailCtrl", detailCtrl);
+    class DetailsController {
+        static $inject = ['$scope', '$routeParams', 'todoStore'];
+        constructor($scope: IDetailsScope, $routeParams: IDetailsParams, todoStore: ITodoStoreService) {
+            todoStore.getById(parseInt($routeParams.todoId, 10)).then(
+                (data: Todo) => {
+                    $scope.todo = data;
+                },
+                () => {
+                    // show error
+                });
+        }
+    }
 
-})();
+    angular.module('todo').controller('DetailCtrl', DetailsController);
+}
