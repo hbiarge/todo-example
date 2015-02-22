@@ -6,7 +6,7 @@
         this.done = false;
     };
 
-    function todosCtrl($scope) {
+    function TodosCtrl($scope) {
 
         $scope.newTodoText = '';
 
@@ -37,8 +37,8 @@
 
     }
 
-    todosCtrl.$inject = ['$scope'];
+    TodosCtrl.$inject = ['$scope'];
 
-    angular.module('todo').controller('TodosCtrl', todosCtrl);
+    angular.module('todo').controller('TodosCtrl', TodosCtrl);
 
 })();
