@@ -1,10 +1,10 @@
 ﻿<form name="newTask" ng-model="newTodoText" class="new-task" novalidate>
-    <input type="text" name="newTodoText" ng-model="newTodoText" required />
-    <button ng-click="addNew()" ng-disabled="!newTask.$valid">add</button>
+    <input type="text" name="newTodoText" ng-model="newTodoText" autofocus required />
+    <button id="addTodo" ng-click="addNew()" ng-disabled="!newTask.$valid">add</button>
 </form>
 <section class="remaining-tasks">
     <span>Total: {{todos.length}} - Remaining: {{remaining.value}}</span>
-    <button ng-click="removeDoneTodos()" ng-disabled="(todos.length - remaining.value) === 0">remove done</button>
+    <button id="removeDone" ng-click="removeDoneTodos()" ng-disabled="(todos.length - remaining.value) === 0">remove done</button>
 </section>
 <section class="task-list">
     <ul>

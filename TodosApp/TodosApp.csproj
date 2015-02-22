@@ -78,6 +78,9 @@
     <Content Include="app\services\todoStore.js" />
     <Content Include="app\tpl\Detail.html" />
     <Content Include="app\tpl\List.html" />
+    <Content Include="app_test\e2e\specs\List.spec.js" />
+    <Content Include="app_test\e2e\pages\listPage.js" />
+    <Content Include="app_test\e2e\protractor.conf.js" />
     <Content Include="content\todo.less" />
     <Content Include="content\todo.css.map">
       <DependentUpon>todo.css</DependentUpon>
