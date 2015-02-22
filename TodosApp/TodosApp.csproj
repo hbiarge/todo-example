@@ -62,8 +62,11 @@
     <Content Include="content\todo.css.map">
       <DependentUpon>todo.css</DependentUpon>
     </Content>
-    <Content Include="scripts\angular.min.js.map" />
+    <Content Include="gruntfile.js" />
     <Content Include="packages.config" />
+    <Content Include="bower.json" />
+    <Content Include="package.json" />
+    <Content Include="vendors\angular\js\angular.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -81,9 +84,8 @@
       <DependentUpon>todo.css</DependentUpon>
     </Content>
     <Content Include="index.html" />
-    <Content Include="scripts\angular-mocks.js" />
-    <Content Include="scripts\angular.js" />
-    <Content Include="scripts\angular.min.js" />
+    <Content Include="vendors\angular\js\angular.js" />
+    <Content Include="vendors\angular\js\angular.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
