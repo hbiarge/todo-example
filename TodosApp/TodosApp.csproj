@@ -83,11 +83,12 @@
       <DependentUpon>todo.css</DependentUpon>
     </Content>
     <Content Include="Global.asax" />
-    <Content Include="scripts\angular-route.js" />
-    <Content Include="scripts\angular-route.min.js" />
-    <Content Include="scripts\angular.min.js.map" />
+    <Content Include="gruntfile.js" />
     <Content Include="packages.config" />
-    <Content Include="scripts\angular-route.min.js.map" />
+    <Content Include="bower.json" />
+    <Content Include="package.json" />
+    <Content Include="vendors\angular-route\js\angular-route.min.js.map" />
+    <Content Include="vendors\angular\js\angular.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -105,9 +106,10 @@
       <DependentUpon>todo.css</DependentUpon>
     </Content>
     <Content Include="index.html" />
-    <Content Include="scripts\angular-mocks.js" />
-    <Content Include="scripts\angular.js" />
-    <Content Include="scripts\angular.min.js" />
+    <Content Include="vendors\angular-route\js\angular-route.js" />
+    <Content Include="vendors\angular-route\js\angular-route.min.js" />
+    <Content Include="vendors\angular\js\angular.js" />
+    <Content Include="vendors\angular\js\angular.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -132,7 +134,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>63380</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
