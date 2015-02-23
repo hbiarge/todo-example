@@ -6,32 +6,33 @@
         this.done = false;
     };
 
-    function TodosCtrl($scope) {
+    function TodosCtrl() {
 
-        $scope.newTodoText = '';
+        var that = this;
+        that.newTodoText = '';
 
-        $scope.remaining = 0;
+        that.remaining = 0;
 
-        $scope.todos = [];
+        that.todos = [];
 
-        $scope.addNew = function () {
-            var newTodo = new Todo($scope.newTodoText);
-            $scope.todos.push(newTodo);
-            $scope.remaining++;
-            $scope.newTodoText = '';
+        that.addNew = function () {
+            var newTodo = new Todo(that.newTodoText);
+            that.todos.push(newTodo);
+            that.remaining++;
+            that.newTodoText = '';
         };
 
-        $scope.removeDoneTodos = function () {
-            $scope.todos = $scope.todos.filter(function (todo) {
+        that.removeDoneTodos = function () {
+            that.todos = that.todos.filter(function (todo) {
                 return todo.done !== true;
             });
         };
 
-        $scope.updateRemainig = function (todo) {
+        that.updateRemainig = function (todo) {
             if (todo.done) {
-                $scope.remaining--;
+                that.remaining--;
             } else {
-                $scope.remaining++;
+                that.remaining++;
             }
         };
 
