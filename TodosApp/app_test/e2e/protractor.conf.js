@@ -1,5 +1,5 @@
 ﻿exports.config = {
-    //directConnect: true,
+    directConnect: true,
     allScriptsTimeout: 11000,
     specs: [
       'specs/**/*.spec.js'

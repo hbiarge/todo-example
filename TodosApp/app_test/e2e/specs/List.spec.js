@@ -3,14 +3,14 @@
 describe('Todo details page', function () {
 
     var detailsPage,
-        previousCount;
+        originalCount;
 
     beforeEach(function () {
         detailsPage = new DetailsPage();
         detailsPage.get();
 
-        detailsPage.todoSpans.count().then(function (originalCount) {
-            previousCount = originalCount;
+        detailsPage.todoSpans.count().then(function (value) {
+            originalCount = value;
         });
 
     });
@@ -22,7 +22,7 @@ describe('Todo details page', function () {
             detailsPage.setTodo('My first todo');
             detailsPage.addButton.click();
 
-            var expectedCount = previousCount + 1;
+            var expectedCount = originalCount + 1;
             expect(detailsPage.todoSpans.count()).toBe(expectedCount);
         });
 
