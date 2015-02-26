@@ -3,7 +3,12 @@
 
     function detailCtrl($scope, $routeParams, todoStore) {
 
-        $scope.todo = todoStore.getById(parseInt($routeParams.todoId));
+        $scope.todo = {};
+
+        todoStore.getById(parseInt($routeParams.todoId)).then(
+            function success(todo) {
+                $scope.todo = todo;
+            });
 
     }
 
