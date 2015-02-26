@@ -81,16 +81,22 @@
     <Content Include="app_test\e2e\specs\List.spec.js" />
     <Content Include="app_test\e2e\pages\listPage.js" />
     <Content Include="app_test\e2e\protractor.conf.js" />
+    <Content Include="app_test\unit\commonReferences.js" />
+    <Content Include="app_test\unit\lib\jasmine-2.2.0\boot.js" />
+    <Content Include="app_test\unit\lib\jasmine-2.2.0\console.js" />
+    <Content Include="app_test\unit\lib\jasmine-2.2.0\jasmine-html.js" />
+    <Content Include="app_test\unit\lib\jasmine-2.2.0\jasmine.css" />
+    <Content Include="app_test\unit\lib\jasmine-2.2.0\jasmine.js" />
+    <Content Include="app_test\unit\lib\jasmine-2.2.0\jasmine_favicon.png" />
+    <Content Include="app_test\unit\SpecRunner.html" />
+    <Content Include="app_test\unit\specs\controllers\detailCtrlSpec.js" />
+    <Content Include="app_test\unit\specs\services\todoStoreSpec.js" />
     <Content Include="content\todo.less" />
     <Content Include="content\todo.css.map">
       <DependentUpon>todo.css</DependentUpon>
     </Content>
     <Content Include="Global.asax" />
-    <Content Include="scripts\angular-route.js" />
-    <Content Include="scripts\angular-route.min.js" />
-    <Content Include="scripts\angular.min.js.map" />
     <Content Include="packages.config" />
-    <Content Include="scripts\angular-route.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -108,9 +114,6 @@
       <DependentUpon>todo.css</DependentUpon>
     </Content>
     <Content Include="index.html" />
-    <Content Include="scripts\angular-mocks.js" />
-    <Content Include="scripts\angular.js" />
-    <Content Include="scripts\angular.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +127,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
