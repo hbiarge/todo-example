@@ -1,8 +1,8 @@
 ﻿var DetailsPage = function () {
     var self = this;
     self.input = element(by.name('newTodoText'));
-    self.addButton = element(by.id('addTodo'));
-    self.removeTodoButton = element(by.id('removeDone'));
+    self.addButton = element(by.buttonText('add'));
+    self.removeTodoButton = element(by.buttonText('remove done'));
     self.todoSpans = element.all(by.repeater('todo in todos').column('todo.done'));
     self.todoChecks = element.all(by.model('todo.done'));
 
