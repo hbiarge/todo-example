@@ -1,0 +1,4 @@
+﻿<form name="newTask" class="new-task" novalidate>
+    <input type="text" name="newTodoText" ng-model="formCtrl.newTodoText" required />
+    <button ng-click="formCtrl.addNew(newTask)" ng-disabled="!newTask.$valid">add</button>
+</form>

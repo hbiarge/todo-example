@@ -1,0 +1,7 @@
+﻿<section class="task-list">
+    <ul>
+        <li ng-repeat="todo in todos track by todo.id">
+            <todo-list-item todo="todo" on-todo-change="onTodoChange({ todo: todo })" />
+        </li>
+    </ul>
+</section>
