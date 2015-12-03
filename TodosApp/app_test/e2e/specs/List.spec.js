@@ -1,4 +1,4 @@
-﻿var DetailsPage = require('../pages/listPage.js');
+﻿var ListPage = require('../pages/listPage.js');
 
 describe('Todo details page', function () {
 
@@ -6,7 +6,7 @@ describe('Todo details page', function () {
         originalCount;
 
     beforeEach(function () {
-        detailsPage = new DetailsPage();
+        detailsPage = new ListPage();
         detailsPage.get();
 
         detailsPage.todoSpans.count().then(function (value) {

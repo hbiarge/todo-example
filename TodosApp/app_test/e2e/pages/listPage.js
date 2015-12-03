@@ -1,4 +1,4 @@
-﻿var DetailsPage = function () {
+﻿var ListPage = function () {
     var self = this;
     self.input = element(by.name('newTodoText'));
     self.addButton = element(by.buttonText('add'));
@@ -15,4 +15,4 @@
     };
 };
 
-module.exports = DetailsPage;
+module.exports = ListPage;
